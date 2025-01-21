@@ -169,20 +169,106 @@
     line-height: 1.8;
     margin-bottom: 15px;
 }
-
-.about-photo {
-    width: 45%; /* 右侧照片区域占 45% 宽度 */
-    text-align: center;
+/* 设置整体容器，文字与图片左右对齐 */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+  gap: 50px;
 }
 
+/* 文字部分的美化 */
+.about-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  color: #213555;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #213555;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* 照片样式 */
 .about-photo img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%; /* 圆形照片 */
-    max-width: 250px; /* 限制照片的最大宽度 */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 照片阴影 */
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* 初始状态隐藏详细内容 */
+.hidden-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* 隐藏 checkbox */
+.toggle-checkbox {
+  display: none;
+}
+
+/* 选中复选框时，显示完整内容 */
+.toggle-checkbox:checked + .hidden-content {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* “Read More” 按钮样式 */
+.toggle-label {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #213555;
+  color: #F5EFE7;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 悬停效果 */
+.toggle-label:hover {
+  background-color: #F5EFE7;
+  color: #213555;
+}
+
+/* 切换 “Read More” → “Read Less” 文本 */
+.toggle-checkbox:checked + .hidden-content + .toggle-label::after {
+  content: " Read Less";
+}
+
+.toggle-label::after {
+  content: " Read More";
+}
+
+/* 响应式设计，适配移动端 */
+@media (max-width: 768px) {
+  .about-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .about-photo img {
+      max-width: 80%;
+      margin-top: 20px;
+  }
+
+  .about-text {
+      text-align: left;
+  }
+}
 /* 响应式设计：适应移动设备 */
 @media (max-width: 768px) {
     .about-container {
