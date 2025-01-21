@@ -197,7 +197,6 @@
   display: inline-block;
   padding-bottom: 10px;
 }
-
 /* 照片样式 */
 .about-photo img {
   max-width: 400px;
@@ -210,17 +209,17 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 
-/* 隐藏 checkbox */
+/* 隐藏复选框 */
 .toggle-checkbox {
   display: none;
 }
 
-/* 选中复选框时，显示完整内容 */
+/* 当复选框被选中时，显示完整内容 */
 .toggle-checkbox:checked + .hidden-content {
-  max-height: 1000px;
+  max-height: 2000px;  /* 确保足够的高度以适应内容 */
   opacity: 1;
 }
 
@@ -228,20 +227,22 @@
 .toggle-label {
   display: inline-block;
   margin-top: 15px;
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #213555;
   color: #F5EFE7;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-/* 悬停效果 */
+/* 按钮悬停效果 */
 .toggle-label:hover {
   background-color: #F5EFE7;
   color: #213555;
+  transform: scale(1.05);
 }
 
 /* 切换 “Read More” → “Read Less” 文本 */
@@ -253,37 +254,40 @@
   content: " Read More";
 }
 
-/* 响应式设计，适配移动端 */
+/* 响应式设计 */
 @media (max-width: 768px) {
   .about-container {
       flex-direction: column;
+      align-items: center;
       text-align: center;
   }
 
-  .about-photo img {
-      max-width: 80%;
-      margin-top: 20px;
+  .about-photo {
+      width: 100%;
+      display: flex;
+      justify-content: center;
   }
 
-  .about-text {
-      text-align: left;
+  .about-photo img {
+      max-width: 250px; /* 小屏幕上照片的最大宽度 */
+  }
+
+  .toggle-label {
+      font-size: 1rem;
+      padding: 10px 20px;
   }
 }
-/* 响应式设计：适应移动设备 */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column; /* 在小屏幕下，内容竖直排列 */
-        align-items: center;
-    }
 
-    .about-text, .about-photo {
-        width: 100%; /* 在小屏幕上，文字和照片区域宽度都占 100% */
-        text-align: center;
-    }
+/* 响应式设计（小屏幕） */
+@media (max-width: 480px) {
+  .about-photo img {
+      max-width: 180px;
+  }
 
-    .about-photo img {
-        max-width: 200px; /* 小屏幕上照片的最大宽度 */
-    }
+  .toggle-label {
+      font-size: 0.9rem;
+      padding: 8px 18px;
+  }
 }
   
   /* 品牌系统部分 */

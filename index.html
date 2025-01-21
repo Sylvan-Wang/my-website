@@ -6,14 +6,14 @@
         <meta name="description" content="Welcome to my portfolio! Discover my UX design projects, personal brand, and interactive experiences.">
         <meta name="keywords" content="portfolio, UX design, web development, pixel art game, interactive design, contact">
         <meta name="author" content="[Your Name]">
-        <meta property="og:title" content="My Portfolio - [Your Name]">
+        <meta property="og:title" content="Welcome to My Universe - Sylvan Wang">
         <meta property="og:description" content="Explore my design journey, projects, and creative work in this interactive portfolio.">
         <meta property="og:image" content="path/to/your-image.jpg">
         <meta property="og:url" content="https://your-portfolio-link.com">
         <link rel="stylesheet" href="styles.css">
         <!-- Add a link to a custom font, e.g., Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-        <title>My Portfolio - [Your Name]</title>
+        <title>Welcome to My Universe - Sylvan Wang</title>
     </head>
 
 <body>
@@ -42,7 +42,10 @@
                     <h1>About Me</h1>
                     <p>Hello! I'm Sylvan, and this is the place where I showcase my personal brand and journey...</p>
             
+                    <!-- 复选框控制内容折叠 -->
                     <input type="checkbox" id="toggle" class="toggle-checkbox">
+                    
+                    <!-- 需要折叠的内容 -->
                     <div class="hidden-content">
                         <p>I am a graduate student at the University of Southern California, pursuing a Master of Science in <strong>Applied Communication Analysis</strong> with a focus on data analysis, strategic communication, and business intelligence. With advanced technical skills in data processing, I am dedicated to understanding how technology and communication shape societal trends and influence business strategies.</p>
             
@@ -55,13 +58,14 @@
                         <p>Feel free to explore my work and get in touch with me if you want to collaborate or just chat!</p>
                     </div>
             
-                    <label for="toggle" class="toggle-label">Read More</label>
+                    <!-- 控制显示的按钮 -->
+                    <label for="toggle" class="toggle-label"></label>
                 </div>
             
                 <div class="about-photo">
                     <img src="IMAGE/my_photo.jpg" alt="Sylvan's Photo">
                 </div>
-            
+            </div>   
         </section>
         <!-- Brand System Section -->
         <section id="brand-system">
